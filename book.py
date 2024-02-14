@@ -48,9 +48,17 @@ class Library:
     def display_all(self):
         return self.books
     
-    def display_book(self, title, author=None, isbn=None):
+    def display_book(self, title=None, author=None, isbn=None):
+        for book in self.books:
+            if book['title'] == title or book['author'] == author:
+                return book
+        return 'Not match'
+
+    def total_books(self, title=None, author=None, isbn=None):
+        no_of_books = 0
         for book in self.books:
             if book['title'] == title:
+                no_of_books += 1
                 return book
         return 'Not match'
             
