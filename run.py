@@ -3,11 +3,18 @@
 
 print('start')
 
-from book import Book
+from book import Book, Library
 
-b = Book('made easy physics', 'Akintola')
-b.category = 'school book'
-print(b.__dict__)
+b = Book('Akin', 'how to code', 873786378)
+
+l = Library()
+
+add_book = l.add_book(b)
+print(add_book)
+k = Library()
+d = k.display_book('how to ')
+print(d)
+#l.delete_all()
 print()
-print(b.to_dict())
+
 # print(k)
